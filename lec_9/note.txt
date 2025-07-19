@@ -1,0 +1,40 @@
+1. Express js
+minimal and flexible web application framework for node js
+single page multi page hybrid web
+
+middleware
+2. need of Express
+simplify server creation
+Routing management
+middleware support
+RESTfuls API creation
+community and plugin
+
+3. installing Express
+4. middleware
+    request->middleware1(next)->middleware2(res.send())->response
+    (res,req,next)=>{}
+
+
+7. handling routes
+    order of routes middleware matter
+    can not call next() after send()
+    '/' matches everything
+    res.send() call res.end() cannt go to next middleware
+
+
+middleware is fn which run before final request handler
+modify request and response object
+end request response cycle
+
+Client Request
+     ↓
+Middleware 1 (e.g., Logging)
+     ↓
+Middleware 2 (e.g., Body Parser)
+     ↓
+Middleware 3 (e.g., Authentication)
+     ↓
+Route Handler (e.g., app.get('/'))
+     ↓
+Response Sent

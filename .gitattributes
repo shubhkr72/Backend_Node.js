@@ -1,0 +1,6 @@
+
+# Ensure consistent line endings
+* text=auto
+
+# Force LF for all JSON files
+*.json text eol=lf

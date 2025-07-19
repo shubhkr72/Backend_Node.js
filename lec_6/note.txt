@@ -1,0 +1,30 @@
+1. Event Driven
+
+2. Single Threaded ->event Loop
+ thread_pool(worker thread)
+
+3. V8 vs libuv
+ both are runtime of node
+ libuv is lib of c++ used for asynchonus nature
+ v8 only compile  
+
+ 4. Node runtime
+ async ko libuv me bhej do worker thread after over put in event Loop
+
+ 5. EVENT loop Priority
+  timer
+  pending callbacks
+  idle,prepare
+  poll 
+  setimmediate()
+  close callbacks
+
+
+6. Blocking Code
+writefileSync
+use writefile use error callback 
+
+7. RUN and observe
+
+
+ How JAVASCRIPT works video

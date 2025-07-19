@@ -1,0 +1,10 @@
+use body-Parser to parse incoming data or direct express
+
+
+express router
+common router
+adding 404
+Adding HTML files
+using path module
+using file helper
+can use relative or absolute path (utils )

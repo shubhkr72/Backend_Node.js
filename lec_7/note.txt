@@ -1,0 +1,21 @@
+NPM tools
+1. npm init ->for proper packages
+packages.json strore all dependencies
+2. npm scripts
+npm start
+npm run script
+
+4 npm packages
+node package manager
+Express react lodash
+Registry-> public storage of open-source
+
+5
+npm install package
+-save
+-save-dev
+--g
+-save-exact
+-force
+
+6 install nodemon ->auto restart server

@@ -1,0 +1,3 @@
+use tailwindcss for style
+serving static file in public make it public in with middleware
+can use cdn 

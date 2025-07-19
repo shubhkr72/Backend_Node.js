@@ -1,0 +1,6 @@
+1. Syntax error
+2. Logical error
+3. Runtime error
+
+4. using Debugger for logical error 
+run debbuger
