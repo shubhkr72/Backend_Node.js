@@ -8,3 +8,4 @@
 8. Errors and debugging
 9. Intoduction to Expressjs
 10. Deep dive Express
+11. tailwind css addition
