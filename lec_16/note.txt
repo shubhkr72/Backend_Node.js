@@ -1,0 +1,28 @@
+Introduction to MongoDB
+replace mysql by MongoDB
+
+use when data is big  --> performance is primary --> not worry about storage
+NoSQL Document DataBase -> flexible json like
+Dynamic schema
+
+multiple document in table
+
+horizontal scaling
+High Availibility --> provide replication with automatic failover
+Rich quering Capabilities
+Geospatial and text search --> location based and full-text queries
+
+use Atlas on cloud
+can install community server
+password  -> Sebrin720@
+username -->sebrin
+
+connect application with driver
+
+mongodb+srv://sebrin:Sebrin720%40@homestay.d4wrno4.mongodb.net/?retryWrites=true&w=majority&appName=HomeStay
+mongodb+srv://sebrin:Sebrin720%40@homestay.homes.mongodb.net/admin
+
+tables==collections
+
+use compass
+use mongodb for vs code

@@ -1,0 +1,21 @@
+Creating Dynamic UI
+EJS embedded javascript
+
+1. Need of Dynamic UI   
+    a. Personalised content
+    b. Dynamic data delivery-> real time information
+    c. Security and access control -> based on user authentication and authorization
+    d. Localisation and Internationalisation
+    e. API versality 
+
+
+2. sharing using global variable
+
+3. EJS
+javascript in HTML
+<%  js %> for control flow
+<% =%> for output
+template reuse ->support partials for code snippets
+
+6. make partials like component for repeted component
+

@@ -1,0 +1,11 @@
+MVC-> Model View Architecture
+
+Model  -->>data processing//business logic
+View ->UI
+
+Controller  ->>process user input ->mid handler
+
+//seperation of concern ->dividing on basis of type of work
+
+
+reading data from files

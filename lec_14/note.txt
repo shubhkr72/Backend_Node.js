@@ -1,0 +1,14 @@
+14. Dynamic paths
+
+1. path parameter -->value
+2. query parameter --> key value pair
+
+1. Adding home details page 
+    route by random ID
+    add random id on home object before saving to home Model
+    Add a route in the store router for homes/:home id
+
+2. Showing Real Home Data
+    add a static method in homemodel that takes a callback
+
+3.

@@ -1,0 +1,28 @@
+
+body{
+    background-color: rgb(26, 18, 18);
+    
+}
+h1{
+    color: aqua;
+    text-align: center;
+}
+#link{
+    text-align: center;
+    /* background-color: antiquewhite; */
+    font-size: xx-large;
+    
+}
+a{
+    color: rgb(8, 0, 231);
+    text-decoration: none;
+    background-color: rgb(37, 29, 58);
+    padding: 8px;
+    border-radius: 10px;
+     display: inline-block; /* Needed for transform to work */
+    transition: transform 0.3s ease; /* Smooth animation */
+
+}
+a:hover{
+    transform: scale(1.5);
+}

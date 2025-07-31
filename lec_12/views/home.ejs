@@ -1,0 +1,24 @@
+<%-include('partials/head')%>
+</head>
+<body>
+    <div>
+        <h1>welcome shubham</h1>
+    </div>
+    <div id="link">
+        <a href="/host/add-home">Register</a>
+    </div>
+    <div>
+        <h1>Here are listed Homes</h1>
+        <ul>
+            <% RegisteredHomes.forEach((home)=>{ %>
+                <li>
+                    <%=home.housename%>
+                </li>
+
+           <% }) %>
+        </ul>
+    </div>
+    <%-include('partials/footer')%>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+1. Store Data
+2. Enable Data Management
+3.Facilitate- Quick-Access
+4. Ensure Data integrity
+5.support multiple users
+6.Secure Data
+Relational DataBase
+fixed Schema --> predefined Schema
+vertical scaling--> increasing the resources of a single server  --> SQL
+horizontal scaling --> making any server  NO SQL
+ACID compliance-> atomic consistent isolated durable
+complex queries
+
+NOSQL -> not only sql
+flexible Schema
+Horizontal scalibility
+performance --> for high throughput --> time is important 
+MongoDB
+
+
+SQL --> mysql
+
+adding DB in models
+remove all file related codes
