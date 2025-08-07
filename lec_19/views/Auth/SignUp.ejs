@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* Reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #121829, #1f2636);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: #e0e6ef;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .wrapper {
+      display: flex;
+      max-width: 960px;
+      width: 100%;
+      background-color: rgba(20, 23, 38, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.75);
+      overflow: hidden;
+      flex-wrap: wrap;
+      font-size: 16px;
+    }
+
+    /* Left panel */
+    .left-panel {
+      flex: 1;
+      min-width: 320px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #f0f5ff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 30px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      user-select: none;
+    }
+
+    .left-panel h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      text-shadow: 0 0 10px rgba(118, 75, 162, 0.6);
+    }
+
+    .left-panel p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 320px;
+      color: #dbe2ffcc;
+    }
+
+    /* Right panel */
+    .right-panel {
+      flex: 1.2;
+      min-width: 320px;
+      background-color: #1f2636;
+      padding: 50px 40px;
+      color: #cdd6f4;
+    }
+
+    .right-panel h2 {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 36px;
+      color: #8ab4f8;
+      text-shadow: 0 0 8px #5661d9aa;
+      letter-spacing: 0.05em;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+      position: relative;
+    }
+
+    label {
+      color: #aab4cf;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+      user-select: none;
+    }
+
+    .input-icon-wrapper {
+      position: relative;
+    }
+
+    .input-icon-wrapper i {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #5a6b9d;
+      font-size: 1.1rem;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px 18px 14px 44px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2d3350;
+      color: #eef2ff;
+      font-size: 1rem;
+      font-weight: 500;
+      border-left: 5px solid transparent;
+      transition: background-color 0.35s ease, border-left-color 0.35s ease;
+      outline-offset: 2px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    input::placeholder,
+    select option:first-child {
+      color: #6e7ca8aa;
+      font-weight: 400;
+    }
+
+    input:focus,
+    select:focus {
+      background-color: #3c4470;
+      border-left-color: #7b65f2;
+      outline: none;
+    }
+
+    input:focus+i,
+    /* icon inside input wrapper */
+    select:focus+i {
+      color: #a3aaff;
+    }
+
+    /* Custom colored borders for specific fields */
+    #firstName {
+      border-left-color: #667eea;
+    }
+
+    #lastName {
+      border-left-color: #764ba2;
+    }
+
+    #email {
+      border-left-color: #f7b731;
+    }
+
+    #username {
+      border-left-color: #764ba2;
+    }
+
+    #password,
+    #confirmPassword {
+      border-left-color: #20bf6b;
+    }
+
+    #usertype {
+      border-left-color: #f7b731;
+    }
+
+    /* Checkboxes */
+    .checkbox-wrapper {
+      display: flex;
+      align-items: flex-start;
+      /* Align checkbox to top */
+      gap: 8px;
+      font-size: 0.95rem;
+      color: #ccc;
+      user-select: none;
+      line-height: 1.4;
+    }
+
+    .checkbox-wrapper input[type="checkbox"] {
+      margin-top: 3px;
+      /* Adjust checkbox vertical position */
+      flex-shrink: 0;
+      /* Add accent color or styling as needed */
+    }
+
+    .checkbox-wrapper input[type='checkbox']:focus {
+      outline-offset: 3px;
+      outline-color: #999dffaa;
+      outline-style: solid;
+      outline-width: 2px;
+    }
+
+    .checkbox-wrapper span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      cursor: pointer;
+    }
+
+    .checkbox-wrapper i {
+      color: #7b65f2;
+      font-size: 1.15rem;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .checkbox-wrapper a {
+      color: #f7d236;
+      text-decoration: underline;
+      transition: color 0.25s ease;
+    }
+
+    .checkbox-wrapper a:hover,
+    .checkbox-wrapper a:focus {
+      color: #ffe066;
+      outline: none;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      color: #f0f5ff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(118, 75, 162, 0.5);
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.22s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      user-select: none;
+    }
+
+    button i {
+      font-size: 1.3rem;
+    }
+
+    button:hover,
+    button:focus {
+      background: linear-gradient(90deg, #856bf8 0%, #9077db 100%);
+      box-shadow: 0 12px 32px rgba(133, 107, 248, 0.75);
+      outline: none;
+      transform: translateY(-2px);
+      color: #e4dfff;
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 5px 18px rgba(118, 75, 162, 0.45);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .wrapper {
+        flex-direction: column;
+      }
+
+      .left-panel,
+      .right-panel {
+        padding: 36px 24px;
+        min-width: unset;
+      }
+
+      .left-panel h1 {
+        font-size: 2.2rem;
+      }
+
+      .right-panel h2 {
+        font-size: 1.6rem;
+        margin-bottom: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper" role="main">
+
+    <aside class="left-panel" aria-label="Welcome message">
+      <h1>Welcome!</h1>
+      <p>Create your account to get started with us. It's quick and easy.</p>
+    </aside>
+
+    <section class="right-panel" aria-label="Sign up form">
+      <h2>Sign Up</h2>
+      <form action="/signup" method="POST">
+        <% if (errors && errors.length> 0) { %>
+          <div class="error-messages">
+            <div class="error-box">
+              <div class="error-header">⚠️ Please fix the following:</div>
+              <ul>
+                <% errors.forEach(error=> { %>
+                  <li>
+                    <%= error.msg %>
+                  </li>
+                  <% }) %>
+              </ul>
+            </div>
+          </div>
+          <% } %>
+
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <div class="input-icon-wrapper">
+                <input type="text" id="firstName" name="FirstName" placeholder="Enter your first name"
+                  value="<%= oldInput ? oldInput.FirstName : '' %>" required autocomplete="given-name" />
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <div class="input-icon-wrapper">
+                <input type="text" id="lastName" name="LastName" placeholder="Enter your last name"
+                  value="<%= oldInput ? oldInput.LastName : '' %>" required autocomplete="family-name" />
+                <i class="fas fa-user-tag"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <div class="input-icon-wrapper">
+                <input type="email" id="email" name="Email" placeholder="Enter your email"
+                  value="<%= oldInput ? oldInput.Email : '' %>" required autocomplete="email" />
+                <i class="fas fa-envelope"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="username">Username</label>
+              <div class="input-icon-wrapper">
+                <input type="text" id="username" name="UserName" placeholder="Enter your username"
+                  value="<%= oldInput ? oldInput.UserName : '' %>" required autocomplete="username" />
+                <i class="fas fa-user-circle"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <div class="input-icon-wrapper">
+                <input type="password" id="password" name="Password" placeholder="Enter your password" required
+                  autocomplete="new-password" />
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password</label>
+              <div class="input-icon-wrapper">
+                <input type="password" id="confirmPassword" name="ConfirmPassword" placeholder="Confirm your password"
+                  required autocomplete="new-password" />
+                <i class="fas fa-lock"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="usertype">User Type</label>
+              <div class="input-icon-wrapper">
+                <select id="usertype" name="UserType" required>
+                  <option value="" disabled <%=!oldInput || !oldInput.UserType ? 'selected' : '' %>>Select type</option>
+                  <option value="host" <%=oldInput && oldInput.UserType==='host' ? 'selected' : '' %>>Host</option>
+                  <option value="guest" <%=oldInput && oldInput.UserType==='guest' ? 'selected' : '' %>>Guest</option>
+                </select>
+                <i class="fas fa-user-check"></i>
+              </div>
+            </div>
+
+
+            <label class="checkbox-wrapper">
+              <input type="checkbox" name="termsAccepted" required />
+              <span>I agree to the <a href="#">Terms and Conditions</a></span>
+            </label>
+
+
+            <button type="submit" aria-label="Sign Up">
+              <i class="fas fa-user-plus"></i> Sign Up
+            </button>
+      </form>
+    </section>
+  </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <meta charset="UTF-8" />
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Thank You</title>
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #121a26;
+            /* Very dark navy for less strain */
+            color: #cbd5e1;
+            /* Soft light blue-gray text */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thank-you-card {
+            background: #1f2a3a;
+            /* Dark slate blue */
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .thank-you-card:hover {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75);
+        }
+
+        .thank-you-card .checkmark {
+            font-size: 56px;
+            color: #56b6c2;
+            /* Soft teal */
+            margin-bottom: 18px;
+        }
+
+        .thank-you-card h1 {
+            color: #e0e7ff;
+            /* Light periwinkle */
+            font-size: 30px;
+            margin-bottom: 18px;
+            font-weight: 700;
+        }
+
+        .thank-you-card p {
+            color: #a0aec0;
+            /* Muted gray-blue */
+            font-size: 18px;
+            line-height: 1.5;
+            margin-bottom: 34px;
+        }
+
+        .thank-you-card a {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: #56b6c2;
+            /* same teal accent */
+            color: #1a202c;
+            /* almost black text for contrast */
+            font-weight: 600;
+            font-size: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(86, 182, 194, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .thank-you-card a:hover {
+            background-color: #3a96a8;
+            box-shadow: 0 6px 18px rgba(58, 150, 168, 0.7);
+        }
+
+        @media (max-width: 480px) {
+            .thank-you-card {
+                padding: 30px 20px;
+            }
+
+            .thank-you-card h1 {
+                font-size: 24px;
+            }
+
+            .thank-you-card p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+      <div class="thank-you-card" role="region" aria-label="Thank you message">
+            <div class="checkmark" aria-hidden="true">✓</div>
+            <h1>Thank You!</h1>
+            <p>Thanks for contacting us.<br>We’ll reach out to you soon.</p>
+            <a href="/" aria-label="Back to Home">← Back to Home</a>
+          </div>
+
+</body>
+
+</html>

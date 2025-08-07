@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Add Your Home - HomeStay</title>
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e2f;
+      color: #e0e6ef;
+      margin: 0;
+      padding: 0 16px 40px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      margin: 36px 0 24px;
+      color: #73b8ff;
+      font-weight: 700;
+      font-size: 2.8rem;
+      text-shadow: 0 0 10px rgba(115, 184, 255, 0.7);
+      user-select: none;
+    }
+
+    form {
+      background-color: #141537;
+      padding: 36px 40px;
+      border-radius: 14px;
+      max-width: 580px;
+      width: 100%;
+      box-shadow:
+        0 12px 28px rgba(20, 20, 40, 0.6),
+        inset 0 0 15px rgba(30, 40, 80, 0.7);
+      border: 1px solid #2a3147;
+
+      /* Two-column grid layout */
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px 28px; /* 20px row gap, 28px column gap */
+      user-select: none;
+    }
+
+    /* Each label, input, textarea full width within grid cell */
+    form label,
+    form input,
+    form textarea {
+      width: 100%;
+      display: block;
+    }
+
+    /* Label styling */
+    label {
+      color: #93b5ff;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 6px;
+      user-select: text;
+    }
+
+    /* Inputs and textarea styling */
+    input[type="text"],
+    input[type="number"],
+    input[type="url"],
+    textarea {
+      padding: 14px 18px;
+      border-radius: 10px;
+      border: 1.8px solid #394563;
+      font-size: 1rem;
+      color: #dbe0ff;
+      background-color: #1c1f3a;
+      font-weight: 500;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+      resize: vertical;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="number"]::placeholder,
+    input[type="url"]::placeholder,
+    textarea::placeholder {
+      color: #8393b1a8;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    /* Input focus state */
+    input[type="text"]:focus,
+    input[type="number"]:focus,
+    input[type="url"]:focus,
+    textarea:focus {
+      border-color: #73b8ff;
+      box-shadow: 0 0 12px #73b8ffaa;
+      outline: none;
+      background-color: #21254a;
+      color: #e0e6ef;
+    }
+
+    /* Remove up/down arrows on number inputs */
+    input[type="number"] {
+      appearance: textfield;
+    }
+    input[type="number"]::-webkit-inner-spin-button, 
+    input[type="number"]::-webkit-outer-spin-button { 
+      -webkit-appearance: none;
+      margin: 0; 
+    }
+
+    /* Textarea spans full width */
+    textarea {
+      grid-column: 1 / -1;  /* span full width of both columns */
+      min-height: 120px;
+    }
+
+    /* Submit button styling */
+    input[type="submit"] {
+      margin-top: 10px;
+      grid-column: 1 / -1; /* full width */
+      background: linear-gradient(90deg, #4db8ff 0%, #73b8ff 100%);
+      color: #1e1e2f;
+      font-size: 1.2rem;
+      font-weight: 700;
+      padding: 14px 0;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(115, 184, 255, 0.7);
+      transition:
+        background 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.22s ease;
+      user-select: none;
+    }
+    input[type="submit"]:hover,
+    input[type="submit"]:focus {
+      background: linear-gradient(90deg, #3a9def 0%, #5fa8ff 100%);
+      box-shadow: 0 12px 30px rgba(93, 156, 255, 0.85);
+      transform: translateY(-3px);
+      outline: none;
+      color: #f7f9ff;
+    }
+    input[type="submit"]:active {
+      transform: translateY(0);
+      box-shadow: 0 5px 16px rgba(115, 184, 255, 0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px 12px;
+      margin-top: 44px;
+      font-size: 14px;
+      color: #6f7a9e;
+      user-select: none;
+    }
+    footer a {
+      color: #a1b2da;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+      transition: color 0.25s ease;
+    }
+    footer a:hover,
+    footer a:focus {
+      color: #e0e6ef;
+      outline: none;
+    }
+
+    /* Responsive: single column on small screens */
+    @media (max-width: 640px) {
+      h1 {
+        font-size: 2rem;
+        margin-top: 28px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      input[type="submit"] {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Add Your Home Here</h1>
+
+  <form action="/host/add-home" method="post" aria-label="Add your home form">
+    <label for="housename">House Name:</label>
+    <input type="text" id="housename" name="HouseName" placeholder="e.g., Cozy Nest" required autofocus>
+
+    <label for="ownedby">Owned By:</label>
+    <input type="text" id="ownedby" name="OwnerName" placeholder="Owner's name" required>
+
+    <label for="price">Price Per Night (in ₹):</label>
+    <input type="number" id="price" name="Rate" placeholder="e.g., 1500" min="0" required>
+
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="Location" placeholder="City, State" required>
+
+    <label for="rating">Rating (1 to 5):</label>
+    <input type="number" id="rating" name="Rating" min="1" max="5" step="0.1" placeholder="e.g., 4.5" required>
+
+    <label for="photo">Photo (Web Link):</label>
+    <input type="url" id="photo" name="PhotoUrl" placeholder="https://example.com/photo.jpg" required>
+
+    <label for="description">Description:</label>
+    <textarea id="description" name="Description" rows="5" placeholder="Describe your home..." required></textarea>
+
+    <input type="submit" value="Submit" />
+  </form>
+
+  <footer>
+    <p>&copy; 2023 HomeStay. All rights reserved.</p>
+    <p><a href="/">Home</a> | <a href="/host/add-home">Add Home</a></p>
+  </footer>
+
+</body>
+</html>

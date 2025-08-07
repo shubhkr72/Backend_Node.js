@@ -1,0 +1,27 @@
+Authentication and authorization
+//remove all unnecessary remove cookies is loggedIn
+
+Authentication->> validate who is it correct or not
+once validated look what it can do or access is it authorised to do this?
+
+Authentication verifies who someone is, while authorization determines what they are allowed to do
+
+
+Authentication is the process of verifying the identity of a user or system accessing the application
+it ensures that only authorised users can access protected resorces and features 
+
+add validation on server side dont trust on client side validation can  modify
+//using express-validator
+
+change signup.ejs to show erroes and accept old values
+
+
+1:13 
+
+//saving password encrypted hashing  --> one sided
+npm install bcrypt js
+
+//show error messages
+
+show options based on type of user
+user req.session.user=guest/host

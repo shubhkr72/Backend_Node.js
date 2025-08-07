@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - DSAI Club</title>
+  <style>
+    /* Reset & base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e2f;
+      color: #cfd8f7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #121627;
+      padding: 28px 20px;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #73b8ff;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 12px #4db8ffcc;
+    }
+
+    main {
+      flex-grow: 1;
+      background: #292f4c;
+      max-width: 900px;
+      margin: 40px auto;
+      border-radius: 16px;
+      padding: 36px 32px 48px;
+      box-shadow: 0 12px 36px rgb(0 0 0 / 0.35);
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #4db8ff;
+      border-left: 6px solid #73b8ff;
+      padding-left: 16px;
+      margin-bottom: 32px;
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 8px rgba(77, 184, 255, 0.7);
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      justify-content: space-between;
+    }
+
+    .contact-form,
+    .contact-info {
+      flex: 1 1 320px;
+      min-width: 280px;
+      color: #cbd5e1;
+    }
+
+    /* Form styling */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="phone"],
+    textarea {
+      background: #1a1f3a;
+      border: 1.5px solid #4db8ff88;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #e0e6ef;
+      resize: vertical;
+      transition: border-color 0.25s ease;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-shadow: inset 0 0 8px rgb(77 184 255 / 0.2);
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="phone"]:focus,
+    textarea:focus {
+      border-color: #73b8ff;
+      outline: none;
+      box-shadow: 0 0 14px #4db8ffcc;
+      background: #1c2241;
+      color: #fff;
+    }
+
+    ::placeholder {
+      color: #7a99c9aa;
+      font-weight: 500;
+    }
+
+    button {
+      background-color: #4db8ff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px 26px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #121c2a;
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(77, 184, 255, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.18s ease;
+      user-select: none;
+      align-self: flex-start;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 0.04em;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: #3391e1;
+      box-shadow: 0 10px 24px rgba(77, 184, 255, 0.85);
+      transform: translateY(-3px);
+      color: #eef3ff;
+      outline-offset: 2px;
+      outline-color: #4db8ffdd;
+      outline-style: solid;
+      outline-width: 2px;
+    }
+
+    /* Contact info styling */
+    .contact-info strong {
+      font-size: 1.2rem;
+      color: #73b8ff;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      display: block;
+      margin-bottom: 16px;
+      text-shadow: 0 0 8px #4db8ffcc;
+    }
+
+    .contact-info p {
+      margin-bottom: 18px;
+      font-size: 1.1rem;
+      color: #a9b9e9;
+      line-height: 1.5;
+      text-shadow: 0 0 3px rgba(255 255 255 / 0.1);
+      word-break: break-word;
+    }
+
+    .contact-info p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      background-color: #121627;
+      color: #5b6a8d;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 0.875rem;
+      letter-spacing: 0.04em;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      user-select: none;
+      margin-top: 64px;
+    }
+
+    /* Responsive */
+    @media (max-width: 720px) {
+      main {
+        margin: 24px 16px 48px;
+        padding: 28px 24px 36px;
+      }
+
+      .contact-container {
+        flex-direction: column;
+        gap: 36px;
+      }
+
+      .contact-form,
+      .contact-info {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+        padding-left: 12px;
+        border-left-width: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 14px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+
+  <main>
+    <h2>We'd love to hear from you!</h2>
+    <div class="contact-container">
+      <div class="contact-form">
+        <form method="post">
+          <input type="text" name="Name" placeholder="Your Name" required autocomplete="name" />
+          <input type="email" name="Email" placeholder="Your Email" required autocomplete="email" />
+          <input type="phone" name="Phone" placeholder="Your Phone" required autocomplete="phone" />
+          <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="contact-info" aria-label="Contact Information">
+        <strong>HomeStay</strong>
+        <p>
+          Jirania, Agartala<br />
+          Barjala, Jirania<br />
+          Tripura - 799046, India
+        </p>
+        <p>Email: <a href="mailto:homestay@gmail.com" style="color: #73b8ff;">homestay@gmail.com</a></p>
+        <p>Phone: <a href="tel:+911234567890" style="color: #73b8ff;">+91-12345-67890</a></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 HomeStay, Jirania, Agartala. All rights reserved.
+  </footer>
+</body>
+
+</html>

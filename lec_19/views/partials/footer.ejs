@@ -1,0 +1,124 @@
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #181b22;
+      color: #e0e6ef;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    footer {
+      background: linear-gradient(90deg, #21232a 0%, #232b39 100%);
+      color: #e0e6ef;
+      padding: 40px 0 22px 0;
+      text-align: center;
+      margin-top: 40px;
+      border-top: 1.5px solid #293040;
+      box-shadow: 0 0 8px #20243044 inset;
+    }
+    .footer-brand {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #73b8ff;
+      margin-bottom: 10px;
+      display: inline-block;
+    }
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin: 22px 0 14px 0;
+      flex-wrap: wrap;
+    }
+    .footer-social-link {
+      display: flex;
+      align-items: center;
+      background: #232b39;
+      border-radius: 28px;
+      padding: 8px 20px 8px 10px;
+      box-shadow: 0 2px 8px #21232a18;
+      color: #cfe3fa;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.2s, color 0.2s, transform 0.18s;
+      gap: 8px;
+      letter-spacing: 0.2px;
+    }
+    .footer-social-link:hover {
+      color: #232b39;
+      background: #73b8ff;
+      transform: translateY(-3px) scale(1.08);
+    }
+    .footer-social-icon {
+      font-size: 20px;
+      margin-right: 7px;
+      background: #212a38;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-nav {
+      margin: 12px 0 0 0;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .footer-nav a {
+      color: #a7b4c2;
+      background: rgba(255,255,255,0.03);
+      padding: 6px 16px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: background 0.18s, color 0.18s;
+    }
+    .footer-nav a:hover {
+      background: #395174;
+      color: #fff;
+    }
+    .footer-copyright {
+      color: #8790a8;
+      font-size: 14px;
+      margin-top: 15px;
+      letter-spacing: 0.3px;
+    }
+    @media (max-width: 600px) {
+      .footer-social { flex-direction: column; gap: 12px; }
+      .footer-social-link { width: 100%; justify-content: flex-start; }
+      .footer-nav { flex-direction: column; gap: 10px; }
+      footer { padding: 26px 8px 15px 8px; }
+    }
+  </style>
+
+<footer>
+  <div class="footer-brand">My Rental App</div>
+  <div class="footer-social">
+    <a href="https://facebook.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="Facebook">
+      <span class="footer-social-icon"><i class="fab fa-facebook-f"></i></span>
+      Facebook
+    </a>
+    <a href="https://instagram.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="Instagram">
+      <span class="footer-social-icon"><i class="fab fa-instagram"></i></span>
+      Instagram
+    </a>
+    <a href="https://twitter.com" class="footer-social-link" target="_blank" rel="noopener" aria-label="Twitter">
+      <span class="footer-social-icon"><i class="fab fa-twitter"></i></span>
+      Twitter
+    </a>
+  </div>
+  <nav class="footer-nav">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <div class="footer-copyright">
+    &copy; 2025 My Rental App. All rights reserved.
+  </div>
+</footer>

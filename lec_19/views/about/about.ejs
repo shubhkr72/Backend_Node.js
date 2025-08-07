@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - DSAI Club & My Rental App</title>
+  <style>
+    /* Reset and base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1f2630;
+      color: #e0e6ef;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a {
+      color: #4db8ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #73b8ff;
+      outline: none;
+    }
+
+    header {
+      background-color: #0d121a;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #73b8ff;
+      text-shadow: 0 0 12px #4db8ffaa;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 1.1rem;
+      color: #8aa0bb;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    main {
+      flex-grow: 1;
+      max-width: 900px;
+      padding: 40px 24px 60px;
+      margin: 0 auto;
+      background: #2a3040;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgb(34 43 69 / 0.6);
+    }
+
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      color: #4db8ff;
+      font-weight: 700;
+      position: relative;
+      padding-left: 14px;
+      font-size: 1.9rem;
+      margin-bottom: 20px;
+      border-left: 5px solid #73b8ff;
+      text-shadow: 0 0 6px rgba(75, 184, 255, 0.8);
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      max-width: 100%;
+      word-wrap: break-word;
+    }
+
+    p br {
+      line-height: 2;
+    }
+
+    /* Team */
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+    }
+
+    .member {
+      background: #384159;
+      border-radius: 12px;
+      padding: 24px 20px;
+      flex: 1 1 220px;
+      max-width: 280px;
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .member:hover,
+    .member:focus-within {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 28px rgb(4 83 183 / 0.6);
+    }
+
+    .member h3 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #73b8ff;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+    }
+    .member p {
+      margin: 0;
+      font-size: 1rem;
+      color: #b0c8ff;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    /* Additional details section style */
+    .info-list {
+      background: #384159;
+      border-radius: 12px;
+      padding: 24px 20px;
+      box-shadow: 0 6px 16px rgb(0 0 0 / 0.3);
+      color: #cbd5e1;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    .info-list strong {
+      color: #4db8ff;
+    }
+    .info-list ul {
+      margin: 12px 0 0 24px;
+      padding: 0;
+    }
+    .info-list ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #0d121a;
+      color: #5b6a8d;
+      text-align: center;
+      padding: 22px 20px;
+      font-size: 0.875rem;
+      user-select: none;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
+      letter-spacing: 0.04em;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      main {
+        margin: 20px 12px 40px;
+        padding: 32px 18px 48px;
+        border-radius: 12px;
+      }
+
+      h2 {
+        font-size: 1.6rem;
+      }
+
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .member {
+        max-width: 100%;
+        width: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Data Science and Artificial Intelligence Club</h1>
+  <p>NIT Agartala &mdash; Empowering the Future</p>
+</header>
+
+<main>
+  <section>
+    <h2>About Us</h2>
+    <p>
+      The DSAI Club at NIT Agartala is a passionate student community dedicated to advancing knowledge in Data Science,
+      Artificial Intelligence, and Machine Learning. We strive to build a collaborative ecosystem where students learn,
+      innovate, and implement cutting-edge solutions. One of our flagship projects is <strong>My Rental App</strong>, 
+      a Home Stay platform designed to streamline renting and booking beautiful homes across India.
+    </p>
+  </section>
+
+  <section>
+    <h2>Our Mission</h2>
+    <p>
+      - Bridge the gap between academic theory and real-world industry needs.<br />
+      - Foster innovative projects, hackathons, and hands-on workshops.<br />
+      - Promote research culture and collaborative learning.<br />
+      - Develop user-friendly applications like My Rental App to solve real-life challenges.<br />
+    </p>
+  </section>
+
+  <section>
+    <h2>About My Rental App</h2>
+    <div class="info-list">
+      <p>My Rental App is a comprehensive online platform that:</p>
+      <ul>
+        <li>Hosts listings for various homes and homestays throughout India.</li>
+        <li>Allows users to browse, check details, and book properties effortlessly.</li>
+        <li>Supports trusted reviews and ratings ensuring reliability and quality.</li>
+        <li>Provides owners a seamless platform to showcase their properties.</li>
+      </ul>
+      <p>
+        We focus on a seamless user experience, clear pricing, and strong community support to help travelers find their perfect stay.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Sample Homes & Addresses</h2>
+    <div class="info-list">
+      <ul>
+        <li><strong>Mountain View Villa</strong> - 45 Pine Hill Road, Manali, Himachal Pradesh</li>
+        <li><strong>Ocean Breeze Cottage</strong> - 108 Seashell Lane, Goa</li>
+        <li><strong>City Lights Apartment</strong> - 404 Skyline Tower, Koramangala, Bengaluru</li>
+        <li><strong>Garden Retreat</strong> - 77 Lotus Square, Pondicherry</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Meet the Team</h2>
+    <div class="team">
+      <div class="member" tabindex="0">
+        <h3>Shubham Singh</h3>
+        <p>Club Member<br />Second Year, CSE</p>
+      </div>
+      <!-- Add more members here -->
+      <div class="member" tabindex="0">
+        <h3>Riya Sharma</h3>
+        <p>Club Member<br />Third Year, ECE</p>
+      </div>
+      <div class="member" tabindex="0">
+        <h3>Amit Verma</h3>
+        <p>Club Member<br />Final Year, CSE</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 DSAI Club &amp; My Rental App, NIT Agartala. All rights reserved.
+</footer>
+
+</body>
+</html>
