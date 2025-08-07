@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= home.HouseName %> | Home Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* --- General Body and Font Styling (Dark Theme) --- */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #1a202c; /* Dark blue-grey background */
+      color: #cccccc; /* Light grey for default text */
+    }
+
+    /* --- Main Container (Dark Theme) --- */
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #282c34; /* Darker card background */
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+      border: 1px solid #444; /* Subtle border for dark theme */
+    }
+
+    /* --- Home Image Styling --- */
+    .home-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* --- Details Section (Dark Theme) --- */
+    .details {
+      padding: 40px;
+    }
+
+    .details h1 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 38px;
+      font-weight: 600;
+      color: #61dafb; /* Vibrant light blue for heading */
+    }
+
+    /* --- Information Grid Styling (Dark Theme) --- */
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+      margin: 30px 0;
+      padding: 25px;
+      background-color: #21252b; /* Slightly different dark shade for offset */
+      border-radius: 12px;
+      border: 1px solid #444;
+    }
+
+    .info-grid p {
+      margin: 0;
+      font-size: 16px;
+      color: #cccccc;
+    }
+
+    .info-grid p strong {
+      display: block;
+      font-weight: 500;
+      color: #00aaff; /* A strong blue for labels */
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    /* --- Description Styling (Dark Theme) --- */
+    .description {
+      margin-top: 30px;
+      line-height: 1.8;
+      font-size: 16px;
+      color: #cccccc;
+    }
+
+    .description p {
+      margin-bottom: 15px;
+    }
+    .description p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* --- Buttons Section (Dark Theme) --- */
+    .btns {
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btns a, .btns button {
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+      text-align: center;
+    }
+    
+    /* Secondary Action: Back Link */
+    .btns a {
+      background-color: transparent;
+      color: #61dafb;
+      border-color: #61dafb;
+    }
+
+    .btns a:hover {
+      background-color: #61dafb;
+      color: #1a202c; /* Dark text on hover */
+    }
+
+    /* Primary Action: Book Now Button */
+    .btns button {
+      background-color: #26a69a; /* Vibrant teal/aqua color */
+      color: white;
+      border-color: #26a69a;
+      box-shadow: 0 4px 15px rgba(38, 166, 154, 0.25);
+    }
+
+    .btns button:hover {
+      background-color: #2bbbad;
+      border-color: #2bbbad;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(38, 166, 154, 0.4);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src=<%= home.PhotoUrl %> alt="Home Image" class="home-image">
+
+    <div class="details">
+      <h1><%= home.HouseName %></h1>
+
+      <div class="info-grid">
+        <p><strong>Owned by:</strong> <%= home.OwnerName %></p>
+        <p><strong>Location:</strong> <%= home.Location %></p>
+        <p><strong>Price per night:</strong> ₹<%= home.Rate %></p>
+        <p><strong>Rating:</strong> ⭐ <%= home.Rating %> / 5</p>
+      </div>
+
+      <div class="description">
+        <p>Welcome to <strong><%= home.HouseName %></strong>, your perfect getaway destination! Nestled in the heart of <%= home.location %>, this stunning property combines modern design with a cozy ambiance to make you feel right at home.</p>
+        <p>Enjoy peaceful mornings on the private balcony, relax in spacious and beautifully decorated rooms, and take advantage of all the premium amenities including high-speed Wi-Fi, a fully equipped kitchen, and 24/7 support. Whether you’re traveling solo, as a couple, or with family, this space is tailored for comfort and convenience.</p>
+        <p>Book now to experience unforgettable stays, top-rated service, and a home you'll want to return to again and again.</p>
+      </div>
+
+      <div class="btns">
+        <a href="/">← Back to Listings</a>
+        <button>Book Now</button>
+      </div>
+    </div>
+  </div>
+  
+  
+  <%-include('partials/footer')%>
+</body>
+</html>

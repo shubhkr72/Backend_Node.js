@@ -1,0 +1,13 @@
+Introduction to mongoose
+mongoose is object data modeling(ODM) --> OBJECT Relational modeling
+
+middleLayer between mmongoDB and nodeJS
+
+provide schema based solution to model application data
+simplify data validation and type casting in node nodeJS
+
+middleware for pre post processing
+npm mongoose
+
+//fetch all find
+findByid

@@ -1,0 +1,40 @@
+Session and cookies
+browser and client cookies
+
+1. what is cookies
+    cookies are small piece of data stored in the users browser by server
+    they help websites remember user information and preferences between between page loads and visits
+    cookies can manage user sessions and store data for personalised experiences
+
+
+
+2. Adding login button functions
+
+cookies -> manage states between requests
+
+till 50 
+
+/setting cookies
+
+//problem in cookies
+cookies can be interceptrd or stolen posing security risks
+limited storage 4KB
+user can delete or modify cookies
+
+solution of this is sessions
+
+sessions are server side storage mechanism that track user interaction with website
+they maintain user state and data across multiple requestsin a web application
+\
+we sent ony id of session in cookies
+install express session
+
+Creating a session
+sensitive info is stored on server
+same session is valid for all requests from one user ,using cookies
+remove setting the cookies and save flag session
+check browser for cookies changes
+
+session are stored in memory so they reset when servers restarts
+
+to store sessions in mongodb we use connect-mongodb-session
